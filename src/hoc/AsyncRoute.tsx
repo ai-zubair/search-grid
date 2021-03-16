@@ -1,6 +1,14 @@
 import React, { Component, JSXElementConstructor } from 'react';
+import styled from 'styled-components';
 import { Spinner } from '../commons/Spinner';
 
+const SpinnerWrapper = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 interface ComponentModule{
   default: JSXElementConstructor<ComponentProps>;
@@ -48,7 +56,9 @@ class AsyncRoute extends Component<AsyncRouteProps, AsyncRouteState> {
       );
     } else {
       return (
-        <Spinner />
+        <SpinnerWrapper>
+          <Spinner />
+        </SpinnerWrapper>
       )
     }
   }
