@@ -24,7 +24,9 @@ namespace Wrappers{
   `;
 }
 
-const Spinner: JSXElementConstructor<{}> = function Spinner() {
+const Spinner: JSXElementConstructor<{ isHidden?: boolean }> = function Spinner(props) {
+  if (props.isHidden)
+    return null;
   return (
     <Wrappers.LoaderWrapper />
   )
