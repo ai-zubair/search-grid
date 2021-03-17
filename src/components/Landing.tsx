@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 
-export default function Landing(props: {}) {
+export default class Landing extends Component {
 
-  return (
-    <div className="ui container" style={{marginTop: '20px'}}>
-      <SearchBar />
-    </div>
-  )
+  onSearchFormSubmit = (searchTerm: string) => {
+    console.log(searchTerm);
+  }
+
+  render() {
+    return (
+      <div className="ui container" style={{ marginTop: '20px' }}>
+        <SearchBar onSearchFormSubmit={this.onSearchFormSubmit}/>
+      </div>
+    );
+  }
 };
 
